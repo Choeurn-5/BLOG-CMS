@@ -24,6 +24,8 @@ public function createPost()
 
     session()->flash('message', 'Post created successfully.');
     $this->reset(['title', 'content']);
+
+    $this->authorize('create', Post::class);
 }
 
     public function render()
